@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de Rompecabezas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white shadow-xl rounded-2xl p-6 md:p-10 max-w-4xl w-full text-center">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2">¡Tu Rompecabezas!</h1>
+        <p class="text-gray-600 mb-6">Sube una foto, elige el nivel de dificultad y a jugar.</p>
+
+        <!-- Entrada de archivo -->
+        <div class="mb-6 flex flex-col items-center">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Paso 1: Sube tu foto
+            </label>
+            <input type="file" id="fileInput" accept="image/*" class="
+                w-full md:w-auto
+                bg-blue-500 hover:bg-blue-600 text-white font-bold
+                py-2 px-4 rounded-lg cursor-pointer transition duration-300
+                focus:outline-none focus:ring-2 focus:ring-blue-400
+            "/>
+            <p id="message" class="mt-4 text-red-500 font-semibold"></p>
+        </div>
+
+        <!-- Canvas -->
+        <div class="flex justify-center mb-6">
+            <canvas id="puzzleCanvas"></canvas>
+        </div>
+
+        <!-- Controles -->
+        <div id="controls" class="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center items-center">
+            <div class="flex space-x-2">
+                <button id="shuffleButton" class="
+                    bg-green-500 hover:bg-green-600 text-white font-bold
+                    py-2 px-4 rounded-lg shadow-md transition duration-300
+                    transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400
+                ">
+                    Barajar
+                </button>
+                <button id="resetButton" class="
+                    bg-yellow-500 hover:bg-yellow-600 text-white font-bold
+                    py-2 px-4 rounded-lg shadow-md transition duration-300
+                    transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400
+                ">
+                    Reiniciar
+                </button>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <label for="difficulty" class="text-gray-700 font-semibold">Dificultad:</label>
+                <select id="difficulty" class="
+                    bg-gray-200 border border-gray-300 text-gray-700
+                    py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400
+                ">
+                    <option value="3">Fácil (3x3)</option>
+                    <option value="4">Normal (4x4)</option>
+                    <option value="5">Difícil (5x5)</option>
+                </select>
+            </div>
+        </div>
+
+        <p id="completionMessage" class="text-green-600 font-bold text-lg mt-4 hidden">
+            ¡Felicitaciones! ¡Resolviste el rompecabezas!
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

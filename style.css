@@ -1,0 +1,19 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Estilos personalizados para el canvas */
+canvas {
+    border: 2px solid #e5e7eb;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    touch-action: none; /* Evita zoom en móviles al arrastrar */
+}
